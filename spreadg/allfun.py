@@ -47,6 +47,7 @@ def to_df(data):
 
 def plotter(df, x, y):
     if x!='timestamp':
+        fig = plt.figure()
         plt.plot(df[x], df['y'])
         # naming the x axis 
         plt.xlabel(x) 
@@ -56,11 +57,11 @@ def plotter(df, x, y):
         plt.title(f'{x} VS. {y}') 
         # function to show the plot 
         plt.show() 
-        plt.savefig('data.pdf')
+        return fig
     else:
         df[x]=pd.to_datetime(df[x], unit='s')
         df = df.set_index(x)
-
+        fig=plt.figure()
         # plotting the data
         df[y].resample('m').mean().plot()
         # df['average_sales'].resample('w').mean().plot()
@@ -72,6 +73,6 @@ def plotter(df, x, y):
         # giving a title to my graph 
         plt.title(f'{x} VS. {y}') 
         # function to show the plot 
-        plt.show() 
-        plt.savefig('data.pdf')
+        plt.show()
+        return fig
 
