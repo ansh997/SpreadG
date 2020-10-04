@@ -2,6 +2,10 @@ import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
+requirements = []
+with open('requirements.txt', 'r') as fh:
+    for line in fh:
+        requirements.append(line.strip())
 
 setuptools.setup(
     name="spreadG", # Replace with your own username
@@ -13,10 +17,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ansh997/SpreadG",
     packages=setuptools.find_packages(),
-    install_requires=["numpy==1.15.4",
-                  "gspread",
-                  "pandas==0.23.4",
-                  "oauth2client"],
+    install_requires=requirements,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

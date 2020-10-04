@@ -5,6 +5,7 @@
 
 # Installation
 ```bash
+# pip install -r requirement.txt
 pip install spreadg
 ```
 This will also install google-api-python-client and its dependencies, notably httplib2 and oauth2client, as required dependencies.
