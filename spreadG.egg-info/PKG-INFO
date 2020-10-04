@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: spreadG
-Version: 0.0.1
+Version: 0.0.2
 Summary: Plot data from Google sheets
 Home-page: https://github.com/ansh997/SpreadG
 Author: Himanshu Pal
@@ -13,6 +13,7 @@ Description: # SpreadG
         
         # Installation
         ```bash
+        # pip install -r requirement.txt
         pip install spreadg
         ```
         This will also install google-api-python-client and its dependencies, notably httplib2 and oauth2client, as required dependencies.
