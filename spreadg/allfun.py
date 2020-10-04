@@ -1,8 +1,9 @@
+# import essential libraries
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from pprint import pprint
+
 import pandas as pd
-import seaborn as sns
+
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 
@@ -26,13 +27,13 @@ fig = plt.figure(figsize=(width,height), dpi=400)
 # defining api vars
 scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 
-
+# Authorizes Gdrive API
 def authorize(filename):
     creds = ServiceAccountCredentials.from_json_keyfile_name(filename, scope)
     client = gspread.authorize(creds)
     return client
 
-
+# Loads sheet
 def dataloader(filename, sheetname):
     client = authorize(filename)
     sheet = client.open(sheetname).sheet1  # Open the spreadhseet
@@ -40,11 +41,11 @@ def dataloader(filename, sheetname):
     return data
 
 # working with Data
-
+# converts into DataFrame for easier working with python
 def to_df(data):
     df=pd.DataFrame(data)
     return df
-
+# plots the graph
 def plotter(df, x, y):
     if x!='timestamp':
         fig = plt.figure()
