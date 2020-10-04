@@ -13,6 +13,10 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ansh997/SpreadG",
     packages=setuptools.find_packages(),
+    install_requires=["numpy==1.15.4",
+                  "gspread",
+                  "pandas==0.23.4",
+                  "oauth2client"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
