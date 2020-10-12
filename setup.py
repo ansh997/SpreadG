@@ -8,7 +8,7 @@ with open('requirement.txt', 'r') as fh:
         requirements.append(line.strip())
 
 setuptools.setup(
-    name="ansh997", # Replace with your own username
+    name="spreadg", # Replace with your own username
     version="0.1.0",
     author="Himanshu Pal",
     author_email="palhimanshu997@gmail.com",
