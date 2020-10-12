@@ -49,7 +49,7 @@ def to_df(data):
 def plotter(df, x, y):
     if x!='timestamp':
         fig = plt.figure()
-        plt.plot(df[x], df['y'])
+        plt.plot(df[x], df[y])
         # naming the x axis 
         plt.xlabel(x) 
         # naming the y axis 
